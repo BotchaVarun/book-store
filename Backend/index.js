@@ -44,3 +44,8 @@ app.use("/user", userRoute);
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
+app.use(express.static(path.join(__dirname, "Frontend")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "Frontend","index.html"));
+});
