@@ -1,12 +1,14 @@
 import mongoose from "mongoose";
 
-const bookSchema = mongoose.Schema({
-    name: String,
-    price: Number,
-    category: String,
-    image: { data: Buffer, contentType: String },
+const BookSchema = new mongoose.Schema({
     title: String,
-});
-const Book = mongoose.model("Book", bookSchema);
+    author: String,
+    image: {
+      data: Buffer,
+      contentType: String
+    }
+  });
+  
+const Book = mongoose.model("Book", BookSchema);
 
 export default Book;
