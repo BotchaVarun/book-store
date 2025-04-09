@@ -15,7 +15,7 @@ const allowedOrigins = [
   "http://localhost:3000", // for local dev
   "https://book-store-seven-tawny.vercel.app" // for deployed frontend
 ];
-const path=require('path');
+
 app.use(cors({
   origin: allowedOrigins,
   credentials: true,
@@ -43,9 +43,4 @@ app.use("/user", userRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
-});
-app.use(express.static(path.join(__dirname, "Frontend")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "Frontend","index.html"));
 });
