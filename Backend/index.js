@@ -15,7 +15,7 @@ const allowedOrigins = [
   "http://localhost:3000", // for local dev
   "https://book-store-seven-tawny.vercel.app" // for deployed frontend
 ];
-
+const path=require('path');
 app.use(cors({
   origin: allowedOrigins,
   credentials: true,
