@@ -13,16 +13,11 @@ function App() {
     <>
       <div className="dark:bg-slate-900 dark:text-white">
         <Routes>
-        <Route
-           path="/"
-           element={
-          <>
-            <Home />
-            <Courses />
-          </>
-         }
-/>
-
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/"
+            element={authUser ? <Courses /> : <Navigate to="/signup" />}
+          />
           <Route path="/signup" element={<Signup />} />
         </Routes>
         <Toaster />
